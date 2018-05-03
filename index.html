@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>当前网址二维码生成工具</title>
+  <style>
+    body{
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .app{
+      width: 224px;
+      height: auto;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 12px;
+    }
+    .qrcode {
+      width: 200px;
+      height: 200px;
+    }
+    .url{
+      margin-top: 12px;
+      font-size: 14px;
+      color: #969696;
+      word-wrap: break-word;
+    }
+  </style>
+  <script src="src/qrcode.min.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
+  <div class="app">
+    <div class="qrcode">
+    </div>
+    <div class="url">1234</div>
+  </div>
+</body>
+
+</html>

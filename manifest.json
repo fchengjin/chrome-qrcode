@@ -1,0 +1,13 @@
+{
+  "name": "qrCode creator",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description":
+    "将当前页面地址自动转化为二维码，localhost 和127.0.0.1自动转为对应局域网ip",
+  "permissions": ["activeTab", "clipboardWrite","tabs"],
+  "browser_action": {
+    "default_title": "将当前页面地址自动转化为二维码",
+    "default_icon": "src/icon.png",
+    "default_popup": "index.html"
+  }
+}
