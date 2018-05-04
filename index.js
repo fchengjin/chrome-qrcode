@@ -21,10 +21,10 @@ conn.createOffer(conn.setLocalDescription.bind(conn), noop)
 
 // 获取准确url
 var getUrl = function (url) {
-  var localReg = /^http(s)?:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//i
+  var localReg = /^http(s)?:\/\/(localhost|127\.0\.0\.1|0(\.0){3})(:\d+)?\//i
   if (localReg.test(url)) {
     // 属于本地地址
-    var reg = /(localhost|127\.0\.0\.1)/
+    var reg = /(localhost|127\.0\.0\.1|0(\.0){3})/
     // 创建一个不断获取localIP的定时器, 当localIP有值时，返回
     return new Promise(function (resolve, reject) {
       var t = setInterval(function () {
