@@ -1,10 +1,10 @@
 {
   "name": "qrCode creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "description":
     "将当前页面地址自动转化为二维码，localhost,127.0.0.1,0.0.0.0自动转为对应局域网ip",
-  "permissions": ["activeTab", "clipboardWrite", "tabs"],
+  "permissions": ["activeTab", "clipboardWrite", "tabs", "clipboardRead"],
   "homepage_url": "https://github.com/fchengjin/chrome-qrcode",
   "browser_action": {
     "default_title": "将当前页面地址自动转化为二维码",

@@ -42,6 +42,7 @@ var getUrl = function (url) {
 }
 // 创建二维码
 var createQrcode = function (ele, url) {
+  ele.innerHTML = ''
   qrCode = new QRCode(ele, {
     text: url,
     width: 200,
@@ -54,23 +55,55 @@ var createQrcode = function (ele, url) {
 
 var init = function () {
   var url
-  var qrCodeContainer, urlContainer
+  var qrCodeContainer, urlContainer, copyBtn
   chrome.tabs.getSelected(function (tab) {
     getUrl(tab.url).then(function (val) {
       url = val
     })
   })
   document.addEventListener('DOMContentLoaded', function (e) {
-    console.log(e)
     qrCodeContainer = document.querySelector('.qrcode')
+    appContainer = document.querySelector('.app')
     urlContainer = document.querySelector('.url')
+    copyBtn = document.querySelector('.copy-btn')
+    toastContainer = document.querySelector('.toast')
+    var toast = {
+      show(text) {
+        toastContainer.innerText = text || '复制成功'
+        appContainer.classList.add('show-toast')
+        setTimeout(this.hide, 2000)
+      },
+      hide() {
+        appContainer.classList.remove('show-toast')
+      }
+    }
+    
+    // 回车重绘二维码
+    urlContainer.addEventListener('keydown', function(e) {
+      if(e.keyCode === 13) {
+        url = urlContainer.value;
+        createQrcode(qrCodeContainer, url)
+        urlContainer.blur()
+      }
+    })
+    copyBtn.addEventListener('click', function () {
+      urlContainer.select()
+      var bool = document.execCommand('copy', true)
+      if (bool) {
+        toast.show('复制成功')
+      } else {
+        toast.show('复制失败')
+      }
+      urlContainer.blur()
+    })
   })
   var timer = setInterval(function () {
     if (url && qrCodeContainer && urlContainer) {
-      urlContainer.innerHTML = url
+      urlContainer.value = url
       createQrcode(qrCodeContainer, url)
       clearInterval(timer)
     }
   }, 100)
 }
+
 init()
