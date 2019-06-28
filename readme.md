@@ -4,6 +4,11 @@
 # 特点，使用webRTC获取浏览器ip
 参考[怎样用 JavaScript 程序获取客户的 IP 地址？ - Illgo的回答 - 知乎](https://www.zhihu.com/question/20675353/answer/335325619)
 # 使用方法
+
+## 方法一：应用商店
+应用商店直接安装，[商店地址](https://chrome.google.com/webstore/detail/ioigkcnkkpiaacchehjphogkcnfjnbng/publish-delayed?hl=zh-CN)
+
+## 方法二：手动安装
 - 下载`qrcode.crx`
 - 打开chrome扩展程序窗口（地址栏输入: `chrome://extensions`）
 - 将下载好的`qrcode.crx`拖进上面的窗口
