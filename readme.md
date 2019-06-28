@@ -6,7 +6,7 @@
 # 使用方法
 
 ## 方法一：应用商店
-应用商店直接安装，[商店地址](https://chrome.google.com/webstore/detail/ioigkcnkkpiaacchehjphogkcnfjnbng/publish-delayed?hl=zh-CN)
+应用商店直接安装，[商店地址](https://chrome.google.com/webstore/detail/qrcode-creator/ioigkcnkkpiaacchehjphogkcnfjnbng)
 
 ## 方法二：手动安装
 - 下载`qrcode.crx`
